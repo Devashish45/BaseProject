@@ -1,18 +1,19 @@
 package com.example.baseproject
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.baseproject.data.models.MovieResponse
 import com.example.baseproject.util.DispatcherProvider
 import com.example.baseproject.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class MainViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     val repository: MainRepository,
     val dispatchers: DispatcherProvider
 ) : ViewModel() {
